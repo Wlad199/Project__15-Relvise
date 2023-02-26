@@ -79,7 +79,8 @@ body._lock {
 			top: 0;
 			left: 0;
 			height: 70px; // Высота шапки
-			//background-color: #fff;
+			background-color: #fff;
+			opacity: 70%;
 			z-index: 2;
 		}
 	}
@@ -94,8 +95,20 @@ body._lock {
 // header ====================================================================================================//
 
 .header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 10;
 
 	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width: 767px) {
+			height: 70px;
+		}
+		height: 104px;
 	}
 
 	&__menu {
@@ -115,16 +128,14 @@ body._lock {
 	}
 }
 .menu {
-	min-height: 70px;
-	@media (min-width: 767.5px) {
-		min-height: 104px;
-		max-width: 450px;
-	}
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 525px;
+	
 
 	&__icon {
+
 	}
 
 	&__body {
