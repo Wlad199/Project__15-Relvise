@@ -81,7 +81,7 @@ body._lock {
 			height: 70px; // Высота шапки
 			background-color: #fff;
 			opacity: 70%;
-			z-index: 2;
+			z-index: 5;
 		}
 	}
 
@@ -125,6 +125,10 @@ body._lock {
 		line-height: 133.333333%; /* 32/24 */
 		letter-spacing: 0.1px;
 		color: #117b84;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			color: #0d5c63;
+		}
 	}
 }
 .menu {
@@ -135,6 +139,7 @@ body._lock {
 	
 
 	&__icon {
+		margin: 0px 0px 0px -300px;
 
 	}
 
@@ -144,7 +149,7 @@ body._lock {
 	&__list {
 		color: #000;
 		position: relative;
-		z-index: 5;
+		z-index: 2;
 		display: flex;
 		li {
 			margin: 0px 20px 0px 0px;
@@ -165,4 +170,8 @@ body._lock {
 	}
 }
 .menu-link {
+	span:hover {
+		transition: all 0.3s ease 0s;
+		color: #0d5c63;
+	}
 }
