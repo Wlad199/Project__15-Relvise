@@ -1,0 +1,157 @@
+
+// Burger (**==MW==**) ====================================================================================================//
+
+// Запрещаем скролл основного контента при открытом бургере
+body._lock {
+	overflow: hidden;
+}
+// Прячем бургер на больших экранах
+.menu__icon {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.menu__icon {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+	// Три полоски
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2); //10%
+			background-color: #0d5c63;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1)); //transform: scale(1) translate(0px -50%);
+		}
+	}
+
+	.menu__icon._active {
+		span {
+			width: 0;
+		}
+		&::before,
+		&::after {
+		}
+		&::before {
+			background-color: #117b84;
+			top: calc(50% - rem(1));
+			transform: rotate(-45deg);
+		}
+		&::after {
+			background-color: #117b84;
+			bottom: calc(50% - rem(1));
+			transform: rotate(45deg);
+		}
+	}
+
+	.menu__body {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		padding: 100px 30px 30px 30px;
+		transition: left 0.3s ease 0s;
+		overflow: auto; // Добавляем скролл
+
+		// Рисуем шапку
+		&::before {
+			content: '';
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			height: 70px; // Высота шапки
+			//background-color: #fff;
+			z-index: 2;
+		}
+	}
+
+	// Выезд меню-бургера при нажатии на бургер
+	.menu__body._active {
+		left: 0;
+	}
+}
+
+
+// header ====================================================================================================//
+
+.header {
+
+	&__container {
+	}
+
+	&__menu {
+	}
+
+	&__logo {
+		@media (max-width: 767px) {
+			margin: 0px 0px 0px 20px;
+		}
+		position: relative;
+		z-index: 5;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 133.333333%; /* 32/24 */
+		letter-spacing: 0.1px;
+		color: #117b84;
+	}
+}
+.menu {
+	min-height: 70px;
+	@media (min-width: 767.5px) {
+		min-height: 104px;
+		max-width: 450px;
+	}
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__list {
+		color: #000;
+		position: relative;
+		z-index: 5;
+		display: flex;
+		li {
+			margin: 0px 20px 0px 0px;
+			font-weight: 600;
+			line-height: 171.428571%; /* 24/14 */
+			letter-spacing: 0.2px;
+		}
+		@media (max-width: 767px) {
+			display: block;
+			font-size: 22px;
+			color: #117b84;
+			li {
+				&:not(:last-child){
+					margin: 0px 0px 20px 0px;
+				}
+			}
+		}
+	}
+}
+.menu-link {
+}
