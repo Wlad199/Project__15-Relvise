@@ -78,7 +78,7 @@ body._lock {
 			width: 100%;
 			top: 0;
 			left: 0;
-			height: 70px; // Высота шапки
+			//height: 70px; // Высота шапки
 			background-color: #fff;
 			opacity: 70%;
 			z-index: 5;
@@ -95,7 +95,7 @@ body._lock {
 // header ====================================================================================================//
 
 .header {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
