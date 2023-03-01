@@ -6,6 +6,9 @@
 	&__bg {
 		padding: 50px 0px;
 		background-color: #17213C;
+		@media (max-width: 900px) {
+			padding: 30px 0px 0px 0px;
+		}
 	}
 
 	&__container {
@@ -14,14 +17,30 @@
 	&__top {
 		display: flex;
 		margin: 0px -15px;
+		@media (max-width: 900px) {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__column {
 		flex: 0 1 16.666%;
 		padding: 0px 15px;
+		@media (max-width: 900px) {
+			flex: 0 1 33.333%;
+			padding: 0px 15px 50px 15px;
+		}
+		@media (max-width: 500px) {
+			flex: 0 1 50%;
+		}
 
 		&_m {
 			flex: 0 1 33.334%;
+			@media (max-width: 900px) {
+				flex: 0 1 66.667%;
+			}
+			@media (max-width: 500px) {
+				flex: 0 1 100%;
+			}
 		}
 	}
 
@@ -32,6 +51,9 @@
 		color: #fff;
 		letter-spacing: 0.1px;
 		padding: 0px 0px 20px 0px;
+		@media (max-width: 900px) {
+			padding: 0px 0px 15px 0px;
+		}
 	}
 
 	&__list {
@@ -58,10 +80,6 @@
 		&_2 {
 			display: flex;
 			align-items: center;
-			white-space: nowrap;
-			width: 220px;
-			overflow: hidden;
-			text-overflow: ellipsis;
 			min-height: 30px;
 			padding: 0px 0px 0px 35px;
 			background: url('@img/footer/icons/02.svg') left no-repeat;
@@ -82,15 +100,27 @@
 .bottom-footer {
 	display: flex;
 	justify-content: space-between;
+	padding: 25px 0px;
+	@media (max-width: 767px) {
+		flex-wrap: wrap;
+	}
 
 	&__text {
-		padding: 25px 0px;
 		font-weight: 600;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			padding: 0px 0px 20px 0px;
+			text-align: center;
+		}
 	}
 
 	&__list {
 		display: flex;
-		padding: 25px 0px;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			display: flex;
+			justify-content: center;
+		}
 		li {
 			&:not(:last-child){
 				margin: 0px 20px 0px 0px;
